@@ -14,7 +14,7 @@ const typeDefs = gql`
     input bookInput {
         authors: [String!]
         description: String
-        title: String!
+        title: String
         bookId:ID!
         image: String
         link: String
@@ -35,7 +35,7 @@ const typeDefs = gql`
         bookId: String!
         image: String
         link: String
-        title: String!
+        title: String
 
     }
     type Auth {
@@ -112,8 +112,7 @@ mutation saveBook($bookInput: bookInput!) {
         }
       } 
     }
-        {
-    }
+    
 
 
 {

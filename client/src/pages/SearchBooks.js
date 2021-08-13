@@ -72,11 +72,11 @@ const SearchBooks = () => {
 
     try {
       //const response = await saveBook(bookToSave, token);
-      
-      const {data} = await saveBook({
-        variables:{input:{...bookToSave}}
-      });
       console.log(bookToSave);
+      const {data} = await saveBook({
+        variables:{bookInput:bookToSave}
+      });
+      
 
 
       /*
@@ -127,7 +127,7 @@ const SearchBooks = () => {
         </h2>
         <CardColumns>
           {searchedBooks.map((book) => {
-            console.log(book);
+            //console.log(book);
             return (
               <Card key={book.bookId} border='dark'>
                 {book.image ? (
