@@ -9,7 +9,16 @@ const {authMiddleware} = require('./utils/auth');
 
 const db = require('./config/connection');
 const routes = require('./routes');
-
+const mongoose = require('mongoose');
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/bookSearchDB',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false, 
+  }
+)
 const app = express();
 const server = new ApolloServer({
   typeDefs,
