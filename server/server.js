@@ -9,6 +9,7 @@ const {authMiddleware} = require('./utils/auth');
 
 const db = require('./config/connection');
 const routes = require('./routes');
+/*
 const mongoose = require('mongoose');
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/bookSearchDB',
@@ -19,6 +20,7 @@ mongoose.connect(
     useFindAndModify: false, 
   }
 )
+*/
 const app = express();
 const server = new ApolloServer({
   typeDefs,
@@ -27,7 +29,7 @@ const server = new ApolloServer({
 })
 server.applyMiddleware({app});
 
-const PORT = process.env.PORT|| 3000;
+const PORT = process.env.PORT|| 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
