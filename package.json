@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": "true",
   "description": "",
+  "engines":{
+    "node":"14.16.1",
+    "npm":"6.14.12"
+  },
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
